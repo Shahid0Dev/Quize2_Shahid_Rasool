@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Plindrome</title>
+</head>
+
+<body>
+    <h1>Plindorome Check</h1>
+    <label for="">Enter your string</label>
+    <input type="text" id="input">
+
+    <button onclick="plindrome()">check</button>
+    <input type="text" id="output" style="width: 500px;">
+
+    <script>
+        function plindrome() 
+        {
+          //  alert("workings");
+            var str = document.getElementById("input").value;
+            // var str = "lleeveell";
+            var start = 0,
+                end = 0,
+                count = 0,
+               
+              end = str.length - 1;
+            while (start < str.length) {
+                //comparinng string with reversed string of input
+                if (str[start] === str[end]) {
+                    count++;
+                }
+                start++;
+                end--;
+            }
+            if (count == str.length) {
+                document.getElementById("output").value = ("Given string is Plindrome: "+str);
+                // document.write("Given string is Plindrome: " + str);
+            } else {
+                document.getElementById("output").value = ("Given string is not plindreme: "+str);
+            }
+
+            document.getElementById("input").value=null;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+Regular Function:
+Regular function is delcared using Keyword "function" and it name.
+like: function fetch(){}
+This kind function declaretion used in ES5 and we use return in the scope of the function.
+We can use same name of parametes in regular function. In regualer function this works as dynamic.
+
+Arrow functon:
+Arrow function is delcared using the "=>" and having variable name before it. If there is only one staement in the function then we do not use brackets in the function. arrow function returns value not using return keyword.In Arrow function we have to define scope of this in it.

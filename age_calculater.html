@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculater</title>
+</head>
+<body>
+    <label for="">Enter date of birth:</label>
+    <input type="date" id="inputone" /> <br> <br><br><br><br><br>
+    <label for="">Enter current date</label>
+    <input type="date" id="inputtwo" /> 
+    <button id="btnCalculate2"  onclick="check();" >Calculate Age</button>
+
+    <script>
+        function check(){
+            var startDateInput = document.getElementById("inputone").value;  
+            var endDateInput = document.getElementById("inputtwo").value;  	 
+             
+            //  making objects from date 
+            var startDate = new Date(startDateInput);
+            var endDate  = new Date(endDateInput);
+                  
+            // get difference between two date;
+            var age=endDate - startDate; 
+                  
+           
+            alert("your age is:"+ age*0.0000000000317098);
+        }
+    </script>
+
+
+</body>
+</html>

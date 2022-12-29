@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Digit </title>
+</head>
+
+<body>
+    <label for="">Enter number of greater than 5 digits</label>
+    <input type="number" id="input">
+    <button onclick="check()">sum</button>
+    <input type="text" id="output" style="width: 400px;">
+
+    <script>
+        //declared golable variables for input and output of sum
+        var input;
+        var sum = 0;
+  
+        function check() {
+            input = document.getElementById("input").value;
+            var length = input.length;
+            if (length <= 5) {
+                alert("Input is: " + input + " & Input length is: " + length + "\n Please Enter Again!");
+            } else {
+                for (var i = 0; i < input.length; i++) {
+                    for (var j = 0; j < 10; j++) {
+                        if (input[i] == j) {
+                            console.log(j);
+                            //checking  number is odd or not 
+                            if (j % 2 != 0) {
+                                sum = sum + j;
+                            }
+                        }
+                    }
+                }
+                document.getElementById("output").value = ("Sum of odd digits in number is: " + sum);
+                //alert("sume is: "+sum);
+            }
+            //clearing output feild null autmatically on function call to end
+            document.getElementById("input").value = null;
+        }
+    </script>
+
+</body>
+
+</html>

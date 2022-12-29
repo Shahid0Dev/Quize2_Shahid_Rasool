@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decimal Fix</title>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>Fix number afte decimal value</h1>
+        <label for="">Enter your number</label>
+        <input type="number" id="input">
+        <label for="">Enter number to fix</label>
+        <input type="numer" id="fixd">
+        
+        <button onclick="fixdec()">Press</button> <br>
+        <label for="">Number after fixing digit:</label>
+        <input type="text" id="output" style="width: 500px; margin-top:20px;">
+    </center>
+
+    <script>
+        function fixdec() {
+            var num = document.getElementById("input").value;
+            var fixd = document.getElementById("fixd").value;
+            // var num="23.4444";
+            // var fixd=2;
+            end = 0,
+                count = 0;
+            var shownum = "";
+            // tanking empty string to show output
+            var length = num.length;
+           // document.write(length + "\n" + "<br/>");
+            for (var i = 0; i < length; i++) {
+               // document.write("checked " + "<br/>");
+                shownum += num[end];
+                if (num[end] == ".") 
+                {
+                    while (count < fixd) {
+                        if(count>=length-2)
+                        {
+                            // if fixing digit is higher than length it will break th loop 
+                            break;
+                        }
+                       
+                        shownum += num[end + 1];
+                        end++;
+                        count++;
+                        // checking is there anyother "." 
+                        if(num[end] == ".")
+                        { 
+                            break;
+                        }
+                        
+                       
+                    }
+                    break;
+                }
+
+                end++;
+            }
+            //document.write("checked " + "the string : "+shownum);
+          document.getElementById("output").value =("After fixing decimal Value: "+ shownum);
+          document.getElementById("input").value=null;
+           document.getElementById("fixd").value=null;
+        }
+    </script>
+
+</body>
+
+</html>
